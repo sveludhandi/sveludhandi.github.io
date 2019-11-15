@@ -86,16 +86,17 @@
     <p><img src = "images/neuralNetworkAccuracy.png" alt = "Neural Network Accuracy" class = "center"></p>
   <h5>XGBoost</h5>
   <p>XGBoost is an ensemble learning method similar to random forests in that it uses decision trees but uses gradient boosting. It
-    helps to minimize both bias and variance by using a multitude of decision trees.</p>
+    helps to minimize both bias and variance by using a multitude of decision trees.
+  </p>
   <h4>Seeding</h4>
   <p>Upsets in basketball occur when a higher seeded team loses to a much worse team. Of the 63 games played over the course of each
     tournament since 1985, there has been on average 12 upsets per tournament. Due to this, we created a higher threshold for lower
     seeded teams to win; teams that are lower seeded need to have higher than a 50% chance to win in order to move on in the bracket.</p>
   <h3>Results</h3>
   <h4>Seeding</h4>
-  <p></p>
+  <p>Our implementation of seeding has been proven to be quite useful. Given a equal probability distribution (which scored 12 points for its prediction), the seeding implementation predicted a bracket that scored 76. That's roughly a 500% improvement!</p>
   <h4>XG Boosting</h4>
-  <p></p>
+  <p>XGBoosting was </p>
   <h4>Combining our models: Pick Most Confident</h4>
   <p>We wrote a script that would compare bracket predictions from our best models, which were logistic regression and neural networks. The script would compare the predictions in the two models and choose the prediction that had higher certainty, meaning the difference between winning rate of the two teams. The reason behind such decision was that the two models, logistic regression and neural networks had similar accuracy so we tested if combining the two models would improve our accuracy. The log loss of the model did not change much but the brackets have improved accuracy by an average of _INSERT INFO___ . _INSERT STATISTIC_</p>
   <h4>Overall result</h4>
