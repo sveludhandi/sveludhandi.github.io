@@ -42,6 +42,7 @@
       <h1 class="project-name">CS4641</h1>
       <h2 class="project-tagline">Predicting March Madness</h2>
       <h2 class="project-tagline2">Nikhil Bose, Joel Joseprabu, Ji Won Lee, and Sandeep Veludhandi</h2>
+      <h3 class="project-tagline2"><a href="files/Project Proposal.pdf">Project Proposal</a></h3>
   </section>
   <section class="main-content">
   <h3>Introduction and Motivation</h3>
@@ -90,6 +91,13 @@
     tournament since 1985, there has been on average 12 upsets per tournament. Due to this, we created a higher threshold for lower
     seeded teams to win; teams that are lower seeded need to have higher than a 50% chance to win in order to move on in the bracket.</p>
   <h3>Results</h3>
+  <h4>Seeding</h4>
+  <p></p>
+  <h4>XG Boosting</h4>
+  <p></p>
+  <h4>Combining our models: Pick Most Confident</h4>
+  <p>We wrote a script that would compare bracket predictions from our best models, which were logistic regression and neural networks. The script would compare the predictions in the two models and choose the prediction that had higher certainty, meaning the difference between winning rate of the two teams. The reason behind such decision was that the two models, logistic regression and neural networks had similar accuracy so we tested if combining the two models would improve our accuracy. The log loss of the model did not change much but the brackets have improved accuracy by an average of _INSERT INFO___ . _INSERT STATISTIC_</p>
+  <h4>Overall result</h4>
   <p>We evaluated each model using the log-loss for the 2018-2019 March Madness tournament as well as how many points the bracket would
     generate in the NCAA competition. Logistic Regression, along with Neural Networks, performed the best out of the first four
     techniques and usually had a very close accuracy with Neural Networks. This is most likely the case because of the Neural Network’s
