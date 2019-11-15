@@ -7,18 +7,33 @@
       }
     h1 {
       text-align:center;
+      font-size:35px;
       }
     h2 {
       text-align:center;
+      font-size:30px;
       }
     h3 {
-      text-align:center;
+      margin-left:250px;
+      text-align:left;
+      font-size:25px;
       }
     p {
       margin-right:300px;
       margin-left:300px;
-      text-align:center;
+      text-align:left;
+      font-size:20px;
       }
+    img {
+    height:300px;
+    width:400px;
+    }
+    .center {
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    width:50%;
+    }
   </style>
 </head>
 <body>
@@ -39,10 +54,11 @@
     happen. By using machine learning techniques, such as neural networks and random forests, we hope to find what causes a team to push
     through a tournament and win it all.</p>
   <h3>Dataset</h3>
-  <p>The dataset was acquired from Kaggle’s 2019 March Madness competition. The dataset had recorded games from 2003-current and included
+  <p>The dataset was acquired from Kaggle's 2019 March Madness competition. The dataset had recorded games from 2003-current and included
     regular season as well as tournament games, totaling to over 88000 games. The dataset included 14 features such as free throws made,
     steals, and offensive rebounds. For each game, the stats for each of those features was recorded and used in our analysis. Fortunately,
     all the data was already quantified so we didn’t have to do it ourselves.</p>
+    <p><img src = "images/possibleFeatures.png" alt = "Possible Features" class = "center"></p>
   <h3>Approach</h3>
   <p>We evaluated all the games using different subsets of features. One subset could be using 3 pointers made, turnovers, and field goals
     made, and score, while another subset could be fouls, assists, and defensive rebounds. We used sets of features that we thought would
@@ -54,18 +70,18 @@
   <h5>Logistic Regression</h5>
   <p>Logistic Regression is a discriminative model that calculates the probability of a data point being in a specific class, in this case
     the probability of a team winning or losing.</p>
-    <p><img src = "images/logisticRegressionAccuracy.png" alt = "Logistic Regression Accuracy"></p>
+    <p><img src = "images/logisticRegressionAccuracy.png" alt = "Logistic Regression Accuracy" class = "center"></p>
   <h5>Random Forests</h5>
   <p>Random Forests is an ensemble method performed by bagging multiple random decision trees.  Bagging combines multiple decision trees
     to reduce the final variance which should improve the accuracy of the model.</p>
-    <p><img src = "images/randomForestAccuracy.png" alt = "Random Forest Accuracy"></p>
+    <p><img src = "images/randomForestAccuracy.png" alt = "Random Forest Accuracy" class = "center"></p>
   <h5>Naïve Bayes</h5>
   <p>Naïve Bayes is a generative model working under the assumption that features are independent and classifies the data regardless of
     correlations between features.</p>
-    <p><img src = "images/naiveBayesAccuracy.png" alt = "Naive Bayes Accuracy"></p>
+    <p><img src = "images/naiveBayesAccuracy.png" alt = "Naive Bayes Accuracy" class = "center"></p>
   <h5>Neural Networks</h5>
   <p>Neural Networks use a multitude of different nodes that sum up a series of weights for all the features to produce an output.</p>
-    <p><img src = "images/neuralNetworkAccuracy.png" alt = "Neural Network Accuracy"></p>
+    <p><img src = "images/neuralNetworkAccuracy.png" alt = "Neural Network Accuracy" class = "center"></p>
   <h5>XGBoost</h5>
   <p>XGBoost is an ensemble learning method similar to random forests in that it uses decision trees but uses gradient boosting. It
     helps to minimize both bias and variance by using a multitude of decision trees.</p>
@@ -81,7 +97,7 @@
     and had the worst accuracy on the training data. Most notably, the classifier was extremely confident in all of its predicted matchup
     s, even though it predicted many of them incorrectly. Random Forests consistently performed worse than both Neural Networks and
     Logistic Regression but better than Naïve Bayes.</p>
-    <p><img src = "images/allModelAccuracies.png" alt = "All Accuracies"></p>
+    <p><img src = "images/allModelAccuracies.png" alt = "All Accuracies" class = "center"></p>
   </section>
 </center>
 </body>
