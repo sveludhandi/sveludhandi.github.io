@@ -35,6 +35,18 @@
       font-size:18px;
       padding: 0;
     }
+    ul.table {
+      text-align: left;
+    }
+
+    ul.odd-feature-number {
+      margin-right:300px;
+      margin-left:300px;
+      text-align:left;
+      font-size:18px;
+      padding: 0;
+      background: #f69546;
+    }
     h3.dataset-header {
       margin-right:250px;
       margin-left:250px;
@@ -42,7 +54,16 @@
       font-size:20px;
       padding: 0;
     }
+    table.t2 {
+      border-collapse: collapse;
+    }
 
+    table, th, td {
+      border: 1px solid black;
+      font-size: 20px;
+      text-align: center;
+      padding: 5px 30px;
+    }
     .center {
     display:block;
     margin-left:auto;
@@ -94,15 +115,15 @@
     <li>Free Throws Made</li>
   </ul>
   <h3 class="dataset-header">The different sets of features we ran our models with are listed below:</h3>
-  <table>
+  <table class="t2">
   <tr>
-    <th>Feature Set Number</th>
+    <th>Feature Set</th>
     <th>Features</th>
   </tr>
   <tr>
     <td>1</td>
     <td>
-      <ul style="list-style-type:disc;">
+      <ul class="table" style="list-style-type:disc;">
         <li>Points allowed</li>
         <li>Points scored</li>
         <li>Field goals attempted</li>
@@ -177,8 +198,8 @@
       <ul style="list-style-type:disc;">
         <li>Location of the game</li>
         <li>Points scored</li>
-        <li>field goals made</li>
-        <li>field goals attempted</li>
+        <li>Field goals made</li>
+        <li>Field goals attempted</li>
         <li>3 pointers made</li>
         <li>Free throws made</li>
         <li>Offensive rebounds</li>
@@ -193,8 +214,8 @@
         <li>Location of the game</li>
         <li>Points scored</li>
         <li>Points allowed</li>
-        <li>field goals made</li>
-        <li>field goals attempted</li>
+        <li>Field goals made</li>
+        <li>Field goals attempted</li>
         <li>3 pointers made</li>
         <li>Free throws made</li>
         <li>Offensive rebounds</li>
