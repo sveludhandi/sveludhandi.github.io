@@ -258,6 +258,14 @@
   <p>XGBoost is an ensemble learning method similar to random forests in that it uses decision trees but uses gradient boosting. It
     helps to minimize both bias and variance by using a multitude of decision trees.
   </p>
+  <h4>Pick Most Confident (Our own ensemble Method)</h4>
+  <p>We wrote a script that would compare bracket predictions from our best models, which were logistic regression and
+    neural networks. The script would compare the predictions in the two models and choose the prediction that had
+    higher certainty, meaning the difference between winning rate of the two teams. The reason behind such decision was
+    that the two models, logistic regression and neural networks had similar accuracy so we tested if combining the two
+    models would improve our accuracy. The log loss of the model did not change much but the brackets have improved
+    accuracy by an average of 2%.</p>
+    <p><img src = "images/pickMostConfident.PNG" alt = "All Accuracies" class = "center"></p>
   <h4>Seeding</h4>
   <p>Upsets in basketball occur when a higher seeded team loses to a much worse team. Of the 63 games played over the course of each
     tournament since 1985, there has been on average 12 upsets per tournament. Due to this, we created a higher threshold for lower
@@ -266,14 +274,20 @@
     (which scored 12 points for its prediction), the seeding implementation predicted a bracket that scored 76.
     That's roughly a 500% improvement! Our 5 highest scoring brackets all used seeding and there was a 5.4% increase in
     the average points of the brackets going from unseeded to seeded.</p>
-  <h4>Combining our models: Pick Most Confident</h4>
-  <p>We wrote a script that would compare bracket predictions from our best models, which were logistic regression and
-    neural networks. The script would compare the predictions in the two models and choose the prediction that had
-    higher certainty, meaning the difference between winning rate of the two teams. The reason behind such decision was
-    that the two models, logistic regression and neural networks had similar accuracy so we tested if combining the two
-    models would improve our accuracy. The log loss of the model did not change much but the brackets have improved
-    accuracy by an average of 2%.</p>
     <!-- <img src = "images/mostConfidentPoints.png" alt = "Most Confident Points"> -->
+  <h3>Results</h3>
+  <p>Unfortunately, the effects of seeding isn't necessarily positive and depends o
+    n the model it is applied to. It was observed that for ensemble methods such as XGBoosting or our Pick Most
+    Confident method, the seeding had negative effects. WHY?________________. Outside of the ensemble methods, we also
+    noticed a trend that the degree to the improvement in accuracy made by the seeding is affected by the initial
+    accuracy of the model. WHY?____This is a result of our algorithm making a decision based on the probabilities the
+    model give, which means if the model gives inaccurate probabilities, then our seeding implementation will make a
+    worse decision.</p>
+  <p><img src = "images/seedingImprovementModelsGraph.PNG" alt = "All Accuracies" class = "center"></p>
+  <h4>XG Boosting</h4>
+  <p><img src = "images/xgBoost.PNG" alt = "All Accuracies" class = "center"></p>
+  <h4>Combining our models: Pick Most Confident</h4>
+
   <h4>Overall result</h4>
   <p>We evaluated each model using the log-loss for the 2018-2019 March Madness tournament as well as how many points the bracket would
     generate in the NCAA competition. Logistic Regression, along with Neural Networks, performed the best out of the first four
@@ -283,7 +297,10 @@
     s, even though it predicted many of them incorrectly. Random Forests consistently performed worse than both Neural Networks and
     Logistic Regression but better than Naive Bayes. Our best bracket produced 124 points which is far above the national average.
   </p>
-    <img src = "images/allModelAccuracies.png" alt = "All Accuracies" class = "center">
+    
+    <!--Logistic Regression but better than Naïve Bayes. Our seeding implementation was effective
+    but only had a positive impact when using it in combination with one model and the degree of its impact on the
+    prediction of the bracket was dependent on the accuracy of the model it was used in combination with.</p>-->
   </section>
 </center>
 </body>
