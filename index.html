@@ -348,12 +348,18 @@
     ____Insert Naive Bayes Analysis Here___
   </p>
   <h3 class="model-header">Neural Networks</h3>
-  <p>Neural Networks use a multitude of different nodes that sum up a series of weights for all the features to produce an output.
+  <p>Neural Networks uses multiple layers of different weighted nodes that are propogated through by the given features to produce an output.
   </p>
   <img src = "images/finalNeuralNetTA.PNG" alt = "Neural Network Accuracy">
   <img src = "images/finalNeuralNetPoints.PNG" alt = "Neural Network Points">
   <p>
-    ____Insert Neural Networks Analysis Here___
+    The training accuracies for our Neural Network models were all fairly consistent and close to each other, with all of them falling between
+    0.75 and 0.78. This range is similar to the training accuracies of the previously mentioned models as well. However, when scoring the
+    brackets produced by the model, different feature sets resulted in different performance levels. For example, sets 1, 3, 4, and 8 were around
+    55 - 57, which is an average score in march madness tournaments. Sets 2, 5, 6, and 7, however, all predicted with scores above 100, which are
+    significantly higher. When comparing these feature sets, they all contain assists and some form of field goal metric, indicating that these
+    features might work well with the neural network models. Though set 8 also contained these metrics, it also contained most of the available data,
+    which could result in overfitting due to redundant features.
   </p>
   <h3 class="model-header">Extreme Gradient Boosting (XGBoost)</h3>
   <p>XGBoost is an ensemble learning method similar to random forests in that it uses decision trees but uses gradient boosting. Gradient
