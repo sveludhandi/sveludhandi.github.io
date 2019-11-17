@@ -75,6 +75,14 @@
     height:400px;
     width:500px;
     }
+    img.final_bracket {
+      height: 800px;
+      width: 1000px;
+    }
+    img.model_bracket {
+      height: 600px;
+      width: 800px;
+    }
     ul {
       margin-right:300px;
       margin-left:300px;
@@ -127,9 +135,13 @@
       border: 0;
     }
 
-    td img{
-      width: 100%;
+    table.image_table {
+      border: none;
     }
+    table.image_table td {
+      border: none;
+    }
+
 
     .models {
       margin-right:300px;
@@ -326,17 +338,18 @@
   </p>
   <img src = "images/finalLogTA.PNG" alt = "Logistic Regression Accuracy">
   <img src = "images/finalLogPoints.PNG" alt = "Logistic Regression Points">
-  <img src= "images/LRBest(107)8.png" alt="Best Logistic Regression Bracket">
+    <br>
   <p>
     ____Insert Logistic Regression Analysis Here___
   </p>
+  <img class="model_bracket" src= "images/LRBest(107)8.png" alt="Best Logistic Regression Bracket">
   <h3 class="model-header">Random Forests</h3>
   <p>Random Forests is an ensemble method performed by bagging multiple random decision trees.  Bagging combines multiple decision trees
           to reduce the final variance which should improve the accuracy of the model.
   </p>
   <img src = "images/finalRandomForTA.PNG" alt = "Random Forest Accuracy">
   <img src = "images/finalRandomFor.PNG" alt = "Random Forest Points">
-  <img src= "images/RFBest(113)7.png" alt="Best Random Forest Bracket">
+    <br>
   <p>
     The random forest models all seemed to have a very similar training accuracy (varying less that 1%). However, the points scored by the
     random forest model varied greatly depending on the feature set that was used. There was a general trend where, as we increased the number
@@ -345,25 +358,27 @@
     similar decision trees, the model is able to use many very different trees when analysing the larger feature sets. The decrease in similarity between
     decision trees allows the model to get more accurate and likely led to the increase in points scored seen as the feature sets became larger.
   </p>
+    <img class="model_bracket" src= "images/RFBest(113)7.png" alt="Best Random Forest Bracket">
   <h3 class="model-header">Naive Bayes</h3>
   <p>Naive Bayes is a generative model working under the assumption that features are independent and classifies the data regardless of
           correlations between features.
   </p>
   <img src = "images/finalNaiveBTA.PNG" alt = "Naive Bayes Accuracy">
   <img src = "images/finalNaiveBPoints.PNG" alt = "Naive Bayes Points">
-  <img src= "images/NBBest(52)8.png" alt="Best Naive Bayes Bracket">
+    <br>
   <p>
     Even though Naive Bayes had different accuracies for all the feature sets, the points was almost all the same. Also,
     the predictions were extremely confident in each matchup but got many of them wrong. Due to this, there didn't seem
     to be a relationship between the accuracy and the points. This could be because of the extreme confidence in each
     prediction. Games that might be closer to a 50% chance might end up being predicted completely wrong by this technique.
   </p>
+    <img class="model_bracket" src= "images/NBBest(52)8.png" alt="Best Naive Bayes Bracket">
   <h3 class="model-header">Neural Networks</h3>
   <p>Neural Networks uses multiple layers of different weighted nodes that are propogated through by the given features to produce an output.
   </p>
   <img src = "images/finalNeuralNetTA.PNG" alt = "Neural Network Accuracy">
   <img src = "images/finalNeuralNetPoints.PNG" alt = "Neural Network Points">
-  <img src= "images/NNBest(119)2.png" alt="Best Neural Network Bracket">
+    <br>
   <p>
     The training accuracies for our Neural Network models were all fairly consistent and close to each other, with all of them falling between
     0.75 and 0.78. This range is similar to the training accuracies of the previously mentioned models as well. However, when scoring the
@@ -373,6 +388,7 @@
     features might work well with the neural network models. Though set 8 also contained these metrics, it also contained most of the available data,
     which could result in overfitting due to redundant features.
   </p>
+    <img class="model_bracket" src= "images/NNBest(119)2.png" alt="Best Neural Network Bracket">
   <h3 class="model-header">Extreme Gradient Boosting (XGBoost)</h3>
   <p>XGBoost is an ensemble learning method similar to random forests in that it uses decision trees but uses gradient boosting. Gradient
       boosting sequentially adds trained predictors and assigns them weights and updates the model it is creating using gradient descent.
@@ -382,7 +398,7 @@
     </p>
     <img src = "images/finalXGBTA.PNG" alt = "XGB Points">
     <img src = "images/finalXGBPoints.PNG" alt = "XGB Points">
-    <img src= "images/XGBBest(119)2.png" alt="Best XGB Bracket">
+    <br>
   <p>
     While our XGBoosting models were all able to perform very well in the training, they tended to perform towards the middle of the
     pack when generating a bracket for the 2019 March Madness competition. We believe this might be due to the fact that we train and test
@@ -391,6 +407,7 @@
     one of the best and most important shots in basketball. So while our model did a very good job of predicting the test data, it was unable to
     account for the ways basketball has evolved when making it's predictions for the 2019 March Madness competition.
   </p>
+    <img class="model_bracket" src= "images/XGBBest(119)2.png" alt="Best XGB Bracket">
   <br>
   <h3 class="model-header">Pick Most Confident (Our own ensemble Method)</h3>
   <p>We wrote a script that would compare bracket predictions from our logistic regression, random forest, xgboosting, and
@@ -402,8 +419,16 @@
       closer to 0.5 was likely unable to see a clear distinction between the two competing teams's performance.
     The log loss of the model did not change much but the brackets had their accuracy improved by an average of 2% when our pick most
     confident model was used.</p>
-  <img src = "images/finalMCPoints.PNG" alt = "MC Points">
-  <img src= "images/MCBest(116)3.png" alt="Best MC Bracket">
+    <table class="image_table">
+      <tr>
+        <td>
+          <img src = "images/finalMCPoints.PNG" alt = "MC Points">
+        </td>
+        <td>
+          <img class="model_bracket" src= "images/MCBest(116)3.png" alt="Best MC Bracket">
+        </td>
+      </tr>
+    </table>
   <br>
   <h3 class="model-header">Seeding</h3>
   <p>Upsets in basketball occur when a higher seeded team loses to a much worse team. Of the 63 games played over the course of each
@@ -436,8 +461,7 @@
     the winner grants 63 points. While our model does predict the correct winner, it would need to perform even better to
     predict the final game.
   </p>
-  <img src = "images/bestBracket(124)7MCS.png" alt = "Best Bracket - Feature 7 of Pick Most Confident with Seeding">
-  <img src= "images/finalAllModelPoints.png" alt="Highest Points for Each Model">
+  <img class="final_bracket" src = "images/bestBracket(124)7MCS.png" alt = "Best Bracket - Feature 7 of Pick Most Confident with Seeding">
   <h3 class="main">Future Steps</h3>
   <p>
     Our model's were trained using data that went as far back as 1985. However, the way basketball is played has changed
