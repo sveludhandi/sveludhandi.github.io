@@ -376,12 +376,15 @@
   </p>
   <br>
   <h3 class="model-header">Pick Most Confident (Our own ensemble Method)</h3>
-  <p>We wrote a script that would compare bracket predictions from our best models, which were logistic regression and
-      neural networks. The script would compare the predictions in the two models and choose the prediction that had
+  <p>We wrote a script that would compare bracket predictions from our logistic regression, random forest, xgboosting, and
+      neural networks models. The script would compare the predictions in the models and choose the prediction that had
       higher certainty, meaning the difference between winning rate of the two teams. The reason behind such decision was
-      that the two models, logistic regression and neural networks had similar accuracy so we tested if combining the two
-      models would improve our accuracy. The log loss of the model did not change much but the brackets have improved
-      accuracy by an average of 2%.</p>
+      that the these models had similar accuracy so we tested if combining the models would improve our accuracy. We did this
+      based on the idea that the more extreme the models prediction (closer to 1 or 0) the more likely it was that that model
+      had picked up on something that gave it a clear indication of who would win. Whereas a model that predicted the probabilities
+      closer to 0.5 was likely unable to see a clear distinction between the two competing teams's performance.
+    The log loss of the model did not change much but the brackets had their accuracy improved by an average of 2% when our pick most
+    confident model was used.</p>
   <img src = "images/finalMCPoints.PNG" alt = "MC Points">
   <br>
   <h3 class="model-header">Seeding</h3>
