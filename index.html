@@ -388,23 +388,12 @@
   <p>Our implementation of seeding has been proven to be quite useful. Given a equal probability distribution
     (which scored 12 points for its prediction), the seeding implementation predicted a bracket that scored 76.
     That's roughly a 500% improvement! Our 5 highest scoring brackets all used seeding and there was a 5.4% increase in
-    the average points of the brackets going from unseeded to seeded.</p>
+    the average points of the brackets going from unseeded to seeded. </p>
+  <img src = "images/finalSeedingImprove.PNG" alt = "Seeding Improvement">
+  <p>Outside of the ensemble methods, we also noticed a trend that the degree to the improvement in accuracy made by the seeding is affected by the initial accuracy of the model. This is most likely a result of our algorithm making a decision based on the probabilities the model give, which means if the model gives inaccurate probabilities, then our seeding implementation will make a worse decision. </p>
     <!-- <img src = "images/mostConfidentPoints.png" alt = "Most Confident Points"> -->
   <br>
   <h3 class="main">Results</h3>
-  <h3 class="model-header">Seeding</h3>
-  <p>Unfortunately, the effects of seeding isn't necessarily positive and depends on
-      the model it is applied to. It was observed that for ensemble methods such as XGBoosting or our Pick Most
-      Confident method, the seeding had negative effects. WHY?________________. Outside of the ensemble methods, we also
-      noticed a trend that the degree to the improvement in accuracy made by the seeding is affected by the initial
-      accuracy of the model. WHY?____This is a result of our algorithm making a decision based on the probabilities the
-      model give, which means if the model gives inaccurate probabilities, then our seeding implementation will make a
-      worse decision.</p>
-  <p><img src = "images/finalSeedingImprove.PNG" alt = "All Accuracies" class = "center"></p>
-  <h3 class="model-header">XG Boosting</h3>
-  <p><img src = "images/xgBoost.PNG" alt = "All Accuracies" class = "center"></p>
-  <h3 class="model-header">Combining our models: Pick Most Confident</h3>
-  <p><img src = "images/pickMostConfident.PNG" alt = "All Accuracies" class = "center"></p>
   <h3 class="model-header">Overall Results</h3>
   <p>
     We evaluated each model using the log-loss for the 2018-2019 March Madness tournament as well as how many points the bracket would
