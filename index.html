@@ -95,7 +95,7 @@
     happen. By using machine learning techniques, such as neural networks and random forests, we hope to find what causes a team to push
     through a tournament and win it all.</p>
   <h3>Dataset</h3>
-  <p>The dataset was acquired from Kaggle's 2019 March Madness competition. The dataset had recorded games from 2003-current and included
+  <p>The dataset was acquired from Kaggle's 2019 March Madness competition. The dataset had recorded games from 1985-current and included
     regular season as well as tournament games, totaling to over 88000 games. The dataset included 14 features such as free throws made,
     steals, and offensive rebounds. For each game, the stats for each of those features was recorded and used in our analysis. Fortunately,
     most the data was already quantified so we didn’t have to do it ourselves. The only data we had to quantify was the location of the game.
@@ -297,7 +297,15 @@
     s, even though it predicted many of them incorrectly. Random Forests consistently performed worse than both Neural Networks and
     Logistic Regression but better than Naive Bayes. Our best bracket produced 124 points which is far above the national average.
   </p>
-    
+    <h4>Future Steps</h4>
+    <p>
+      Since our model has data from 1985 onwards, popular strategies may have changed and skewed the data. Our model could
+      value data from more recent seasons more than older seasons. Also, this could be put in practice for individual
+      seasons. However, upsets are still fairly hard to predict. Some teams could perform choke or have important players
+      get injured which would end their tournament run. Using extra features such as player experience or tendency to under
+      perform may help in predicting those upsets. An additional ML technique we could use is Node Regression.
+      Node Regression slightly modifies Logistic Regression and uses it in the training of Neural Networks.
+    </p>
     <!--Logistic Regression but better than Naïve Bayes. Our seeding implementation was effective
     but only had a positive impact when using it in combination with one model and the degree of its impact on the
     prediction of the bracket was dependent on the accuracy of the model it was used in combination with.</p>-->
