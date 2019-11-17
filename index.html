@@ -95,10 +95,10 @@
     happen. By using machine learning techniques, such as neural networks and random forests, we hope to find what causes a team to push
     through a tournament and win it all.</p>
   <h3>Dataset</h3>
-  <p>The dataset was acquired from Kaggle's 2019 March Madness competition. The dataset had recorded games from 2003-current and included
+  <p>The dataset was acquired from Kaggle's 2019 March Madness competition. The dataset had recorded games from 1985 to 2019 and included
     regular season as well as tournament games, totaling to over 88000 games. The dataset included 14 features such as free throws made,
     steals, and offensive rebounds. For each game, the stats for each of those features was recorded and used in our analysis. Fortunately,
-    most the data was already quantified so we didn’t have to do it ourselves. The only data we had to quantify was the location of the game.
+    most the data was already quantified so we did not have to do it ourselves. The only data we had to quantify was the location of the game.
     We did this by having -1 represent an away game, 0 a neutral game, and 1 a home game.</p>
   <h3 class="dataset-header">Our models used the following features for each team:</h3>
   <ul style="list-style-type:disc;">
@@ -232,13 +232,20 @@
   </tr>
   </table>
   <h3>Approach</h3>
-  <p>We evaluated all the games using different subsets of features. One subset could be using 3 pointers made, turnovers, and field goals
-    made, and score, while another subset could be fouls, assists, and defensive rebounds. We used sets of features that we thought would
-    perform the best and compared the results against other sets.</p>
+  <p>We evaluated all the games using different subsets of features. We grouped features based on related statistics. For example, feature set 3
+    contains primarily defensive statistics such as defensive rebounds, steals, blocks, and fouls. We used sets of features that we thought would
+    perform the best and compared the results against other sets. To train our model, we gave it data for games from 1985 to 2018 and had our models
+    predict the outcomes. To make our 2019 March Madness predictions, we fed our models each competing team's regular season average data coming into the
+    competition. Then we had the models predict every possible matchup and generate a bracket.</p>
   <p>The different supervised learning models we used were Logistic Regression, Random Forests, Naive Bayes, and Neural Networks.
     Additionally, we used XGBoost as a means of increasing the accuracy of our results as well as incorporating a new feature, seeding,
     when we construct our bracket. Since we had multiple models that worked well, we decided to implement a new method which would pick the
     most confident choice out of all the models.</p>
+   <p>To check the success of our models, we will have the models generate brackets and calculate the number of points that bracket would
+   have earned used the 1-2-4-8-16-32 method. This method assigns 1 point for each correct prediction in the first round, 2 points for each
+   correct prediction in the second round and so on with 32 points being awarded for predicting the winner of the entire competition.
+   In 2018, the average bracket entered in the NCAA's official competition scored 57 out of a possible 192 points. We set a target of 100
+   points for our models.</p>
   <h4>Logistic Regression</h4>
   <p>Logistic Regression is a discriminative model that calculates the probability of a data point being in a specific class, in this case
     the probability of a team winning or losing.</p>
