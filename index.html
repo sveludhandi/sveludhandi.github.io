@@ -2,25 +2,67 @@
 <html>
 <head>
   <style>
+    .hero-image {
+      /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url("images/marchMadness.jpg");
+
+      height: 100%;
+
+      /* Position and center the image to scale nicely on all screens */
+      background-position: 100% 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+    }
+
+    /* Place text in the middle of the image */
+    .hero-text {
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+    }
     body {
-      background-color:lightblue;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
       }
     h1 {
       text-align:center;
-      font-size:35px;
+      font-size:45px;
+      color:white;
+      padding-bottom: 50px;
+      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       }
     h2 {
+      padding-top: 350px;
       text-align:center;
       font-size:30px;
+      font-weight: 100;
+      color:white;
+      margin-top:0;
       }
     h3 {
       margin-left:250px;
       text-align:left;
       font-size:25px;
       }
+    h3.main {
+      font-size:35px;
+      font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      color: #ff8000;
+    }
+    h3.project-tagline {
+      margin-left:0px;
+      text-align:center;
+      font-weight: 100;
+      font-size: 20px;
+    }
     p {
-      margin-right:300px;
-      margin-left:300px;
+      margin-right:250px;
+      margin-left:250px;
       text-align:left;
       font-size:20px;
       }
@@ -37,6 +79,8 @@
     }
     ul.table {
       text-align: left;
+      margin-right:100px;
+      margin-left:100px;
     }
 
     ul.odd-feature-number {
@@ -54,6 +98,13 @@
       font-size:20px;
       padding: 0;
     }
+    h3.model-header {
+      margin-right:250px;
+      margin-left:250px;
+      text-align:left;
+      font-size:20px;
+      padding: 0;
+    }
     table.t2 {
       border-collapse: collapse;
     }
@@ -64,6 +115,22 @@
       text-align: center;
       padding: 5px 30px;
     }
+    table.methods, table.methods th, table.methods td {
+      padding-right: 50px;
+      padding-left: 50px;
+      margin: 0px;
+      border: 0;
+    }
+
+    td img{
+      width: 100%;
+    }
+
+    .models {
+      margin-right:300px;
+      margin-left:300px;
+    }
+
     .center {
     display:block;
     margin-left:auto;
@@ -74,15 +141,18 @@
 </head>
 <body>
 <center>
-  <section class="page-header">
-      <h1 class="project-name">CS4641</h1>
-      <h2 class="project-tagline">Predicting March Madness</h2>
-      <h2 class="project-tagline2">Nikhil Bose, Joel Joseprabu, Ji Won Lee, and Sandeep Veludhandi</h2>
-      <h3 class="project-tagline2"><a href="files/Project Proposal.pdf">Project Proposal</a></h3>
-  </section>
+  <div class="hero-image">
+    <div class="hero-text"></div>
+      <h2>CS4641 Final Project</h2>
+      <h1>Predicting March Madness</h1>
+    </div>
+  </div>
+  <h3 class="project-tagline">Authors:</h3>
+  <h3 class="project-tagline">Nikhil Bose, Joel Joseprabu, Ji Won Lee, Sandeep Veludhandi</h3>
+  <br>
+  <h3 class="project-tagline"><a href="files/Project Proposal.pdf">Project Proposal</a></h3>
   <section class="main-content">
-  <h3>Introduction and Motivation</h3>
-    <p><img src = "images/marchMadness.jpg" alt = "March Madness" class = center></p>
+  <h3 class="main">Introduction and Motivation</h3>
   <p>The March Madness Tournament is the biggest college basketball tournament in America.
      Millions of people fill out brackets in hopes of correctly predicting the tournament and winning competitions and bets.
      However, in all the years the tournament has occurred, not a single person has created the perfect bracket yet.</p>
@@ -91,7 +161,8 @@
     coaches would know what the best way is to practice. Basketball is an extremely complicated sport where all sorts of upsets could
     happen. By using machine learning techniques, such as neural networks and random forests, we hope to find what causes a team to push
     through a tournament and win it all.</p>
-  <h3>Dataset</h3>
+  <br>
+  <h3 class="main">Dataset</h3>
   <p>The dataset was acquired from Kaggle's 2019 March Madness competition. The dataset had recorded games from 2003-current and included
     regular season as well as tournament games, totaling to over 88000 games. The dataset included 14 features such as free throws made,
     steals, and offensive rebounds. For each game, the stats for each of those features was recorded and used in our analysis. Fortunately,
@@ -134,7 +205,7 @@
   <tr>
     <td>2</td>
     <td>
-      <ul style="list-style-type:disc;">
+      <ul class="table" style="list-style-type:disc;">
         <li>Offensive rebounds</li>
         <li>Defensive rebounds</li>
         <li>Assists</li>
@@ -145,7 +216,7 @@
   <tr>
     <td>3</td>
     <td>
-      <ul style="list-style-type:disc;">
+      <ul class="table" style="list-style-type:disc;">
         <li>Steals</li>
         <li>Blocks</li>
         <li>Defensive rebounds</li>
@@ -157,7 +228,7 @@
   <tr>
     <td>4</td>
     <td>
-      <ul style="list-style-type:disc;">
+      <ul class="table" style="list-style-type:disc;">
         <li>Assists</li>
         <li>Turnovers</li>
         <li>Points scored</li>
@@ -169,7 +240,7 @@
     <tr>
     <td>5</td>
     <td>
-      <ul style="list-style-type:disc;">
+      <ul class="table" style="list-style-type:disc;">
         <li>Free throws made</li>
         <li>2 pointers made</li>
         <li>Field goals made</li>
@@ -182,7 +253,7 @@
   <tr>
     <td>6</td>
     <td>
-      <ul style="list-style-type:disc;">
+      <ul class="table" style="list-style-type:disc;">
         <li>Steals</li>
         <li>Blocks</li>
         <li>Defensive rebounds</li>
@@ -195,7 +266,7 @@
   <tr>
     <td>7</td>
     <td>
-      <ul style="list-style-type:disc;">
+      <ul class="table" style="list-style-type:disc;">
         <li>Location of the game</li>
         <li>Points scored</li>
         <li>Field goals made</li>
@@ -210,7 +281,7 @@
   <tr>
     <td>8</td>
     <td>
-      <ul style="list-style-type:disc;">
+      <ul class="table" style="list-style-type:disc;">
         <li>Location of the game</li>
         <li>Points scored</li>
         <li>Points allowed</li>
@@ -228,7 +299,8 @@
     </td>
   </tr>
   </table>
-  <h3>Approach</h3>
+  <br>
+  <h3 class="main">Approach</h3>
   <p>We evaluated all the games using different subsets of features. One subset could be using 3 pointers made, turnovers, and field goals
     made, and score, while another subset could be fouls, assists, and defensive rebounds. We used sets of features that we thought would
     perform the best and compared the results against other sets.</p>
@@ -236,40 +308,63 @@
     Additionally, we used XGBoost as a means of increasing the accuracy of our results as well as incorporating a new feature, seeding,
     when we construct our bracket. Since we had multiple models that worked well, we decided to implement a new method which would pick the
     most confident choice out of all the models.</p>
-  <h4>Logistic Regression</h4>
-  <p>Logistic Regression is a discriminative model that calculates the probability of a data point being in a specific class, in this case
-    the probability of a team winning or losing.</p>
-    <p><img src = "images/logisticRegressionAccuracy.png" alt = "Logistic Regression Accuracy"></p>
-  <h4>Random Forests</h4>
-  <p>Random Forests is an ensemble method performed by bagging multiple random decision trees.  Bagging combines multiple decision trees
-    to reduce the final variance which should improve the accuracy of the model.</p>
-    <p><img src = "images/randomForestAccuracy.png" alt = "Random Forest Accuracy"></p>
-  <h4>Naïve Bayes</h4>
-  <p>Naïve Bayes is a generative model working under the assumption that features are independent and classifies the data regardless of
-    correlations between features.</p>
-    <p><img src = "images/naiveBayesAccuracy.png" alt = "Naive Bayes Accuracy"></p>
-  <h4>Neural Networks</h4>
-  <p>Neural Networks use a multitude of different nodes that sum up a series of weights for all the features to produce an output.</p>
-    <p><img src = "images/neuralNetworkAccuracy.png" alt = "Neural Network Accuracy"></p>
-  <h4>XGBoost</h4>
+  <div class=models>
+    <table class="methods">
+      <tr>
+        <td style="width:50%">
+          <h4>Logistic Regression</h4>
+          Logistic Regression is a discriminative model that calculates the probability of a data point being in a specific class, in this case
+          the probability of a team winning or losing.
+          <br>
+          <img src = "images/logisticRegressionAccuracy.png" alt = "Logistic Regression Accuracy">
+        </td>
+        <td style="width:50%">
+          <h4>Random Forests</h4>
+          Random Forests is an ensemble method performed by bagging multiple random decision trees.  Bagging combines multiple decision trees
+          to reduce the final variance which should improve the accuracy of the model.
+          <br>
+          <img src = "images/randomForestAccuracy.png" alt = "Random Forest Accuracy">
+        </td>
+      </tr>
+      <tr>
+        <td style="width:50%">
+          <h4>Naïve Bayes</h4>
+          Naïve Bayes is a generative model working under the assumption that features are independent and classifies the data regardless of
+          correlations between features.
+          <br>
+          <img src = "images/naiveBayesAccuracy.png" alt = "Naive Bayes Accuracy">
+        </td>
+        <td style="width:50%">
+          <h4>Neural Networks</h4>
+          Neural Networks use a multitude of different nodes that sum up a series of weights for all the features to produce an output.
+          <br>
+          <img src = "images/neuralNetworkAccuracy.png" alt = "Neural Network Accuracy">
+        </td>
+      </tr>
+    </table>
+  </div>
+  <h3 class="model-header">XGBoost</h3>
   <p>XGBoost is an ensemble learning method similar to random forests in that it uses decision trees but uses gradient boosting. It
     helps to minimize both bias and variance by using a multitude of decision trees.
   </p>
-  <h4>Pick Most Confident (Our own ensemble Method)</h4>
+  <br>
+  <h3 class="model-header">Pick Most Confident (Our own ensemble Method)</h3>
   <p>We wrote a script that would compare bracket predictions from all of our models (, which were logistic regression and neural networks. The script would compare the predictions in the two models and choose the prediction that had higher certainty, meaning the difference between winning rate of the two teams. The reason behind such decision was that the two models, logistic regression and neural networks had similar accuracy so we tested if combining the two models would improve our accuracy.</p>
-  <h4>Seeding</h4>
+  <br>
+  <h3 class="model-header">Seeding</h3>
   <p>Upsets in basketball occur when a higher seeded team loses to a much worse team. Of the 63 games played over the course of each
     tournament since 1985, there has been on average 12 upsets per tournament. Due to this, we created a higher threshold for lower
     seeded teams to win; teams that are lower seeded need to have higher than a 50% chance to win in order to move on in the bracket.</p>
-  <h3>Results</h3>
-  <h4>Seeding</h4>
+  <br>
+  <h3 class="main">Results</h3>
+  <h3 class="model-header">Seeding</h3>
   <p>Our implementation of seeding has been proven to be quite useful. Given a equal probability distribution (which scored 12 points for its prediction), the seeding implementation predicted a bracket that scored 76. That's roughly a 500% improvement! Unfortunately, the effects of seeding isn't necessarily positive and depends on the model it is applied to. It was observed that for ensemble methods such as XGBoosting or our Pick Most Confident method, the seeding had negative effects. WHY?________________. Outside of the ensemble methods, we also noticed a trend that the degree to the improvement in accuracy made by the seeding is affected by the initial accuracy of the model. WHY?____This is a result of our algorithm making a decision based on the probabilities the model give, which means if the model gives inaccurate probabilities, then our seeding implementation will make a worse decision.</p>
   <p><img src = "images/seedingImprovementModelsGraph.PNG" alt = "All Accuracies" class = "center"></p>
-  <h4>XG Boosting</h4>
+  <h3 class="model-header">XG Boosting</h3>
   <p><img src = "images/xgBoost.PNG" alt = "All Accuracies" class = "center"></p>
-  <h4>Combining our models: Pick Most Confident</h4>
+  <h3 class="model-header">Combining our models: Pick Most Confident</h3>
   <p><img src = "images/pickMostConfident.PNG" alt = "All Accuracies" class = "center"></p>
-  <h4>Overall result</h4>
+  <h3 class="model-header">Overall result</h3>
   <p>We evaluated each model using the log-loss for the 2018-2019 March Madness tournament as well as how many points the bracket would
     generate in the NCAA competition. Logistic Regression, along with Neural Networks, performed the best out of the first four
     techniques and usually had a very close accuracy with Neural Networks. This is most likely the case because of the Neural Network’s
