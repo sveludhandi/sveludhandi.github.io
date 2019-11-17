@@ -320,41 +320,37 @@
       correct prediction in the second round and so on with 32 points being awarded for predicting the winner of the entire competition.
       In 2018, the average bracket entered in the NCAA's official competition scored 57 out of a possible 192 points. We set a target of 100
       points for our models.</p>
-  <div class=models>
-    <table class="methods">
-      <tr>
-        <td style="width:50%">
-          <h4>Logistic Regression</h4>
-          Logistic Regression is a discriminative model that calculates the probability of a data point being in a specific class, in this case
-          the probability of a team winning or losing.
-          <br>
-          <img src = "images/logisticRegressionAccuracy.png" alt = "Logistic Regression Accuracy">
-        </td>
-        <td style="width:50%">
-          <h4>Random Forests</h4>
-          Random Forests is an ensemble method performed by bagging multiple random decision trees.  Bagging combines multiple decision trees
+  <h3 class="model-header">Logistic Regression</h3>
+  <p>Logistic Regression is a discriminative model that calculates the probability of a data point being in a specific class, in this case
+        the probability of a team winning or losing.
+  </p>
+  <img src = "images/logisticRegressionAccuracy.png" alt = "Logistic Regression Accuracy">
+  <p>
+    ____Insert Logistic Regression Analysis Here___
+  </p>
+  <h3 class="model-header">Random Forests</h3>
+  <p>Random Forests is an ensemble method performed by bagging multiple random decision trees.  Bagging combines multiple decision trees
           to reduce the final variance which should improve the accuracy of the model.
-          <br>
-          <img src = "images/randomForestAccuracy.png" alt = "Random Forest Accuracy">
-        </td>
-      </tr>
-      <tr>
-        <td style="width:50%">
-          <h4>Naive Bayes</h4>
-          Naive Bayes is a generative model working under the assumption that features are independent and classifies the data regardless of
+  </p>
+  <img src = "images/randomForestAccuracy.png" alt = "Random Forest Accuracy">
+  <p>
+    ____Insert Random Forest Analysis Here___
+  </p>
+  <h3 class="model-header">Naive Bayes</h3>
+  <p>Naive Bayes is a generative model working under the assumption that features are independent and classifies the data regardless of
           correlations between features.
-          <br>
-          <img src = "images/naiveBayesAccuracy.png" alt = "Naive Bayes Accuracy">
-        </td>
-        <td style="width:50%">
-          <h4>Neural Networks</h4>
-          Neural Networks use a multitude of different nodes that sum up a series of weights for all the features to produce an output.
-          <br>
-          <img src = "images/neuralNetworkAccuracy.png" alt = "Neural Network Accuracy">
-        </td>
-      </tr>
-    </table>
-  </div>
+  </p>
+  <img src = "images/naiveBayesAccuracy.png" alt = "Naive Bayes Accuracy">
+  <p>
+    ____Insert Naive Bayes Analysis Here___
+  </p>
+  <h3 class="model-header">Neural Networks</h3>
+  <p>Neural Networks use a multitude of different nodes that sum up a series of weights for all the features to produce an output.
+  </p>
+  <img src = "images/neuralNetworkAccuracy.png" alt = "Neural Network Accuracy">
+  <p>
+    ____Insert Neural Networks Analysis Here___
+  </p>
   <h3 class="model-header">Extreme Gradient Boosting (XGBoost)</h3>
   <p>XGBoost is an ensemble learning method similar to random forests in that it uses decision trees but uses gradient boosting. Gradient
       boosting sequentially adds trained predictors and assigns them weights and updates the model it is creating using gradient descent.
@@ -403,7 +399,7 @@
   <p><img src = "images/xgBoost.PNG" alt = "All Accuracies" class = "center"></p>
   <h3 class="model-header">Combining our models: Pick Most Confident</h3>
   <p><img src = "images/pickMostConfident.PNG" alt = "All Accuracies" class = "center"></p>
-  <h3 class="model-header">Overall ResultS</h3>
+  <h3 class="model-header">Overall Results</h3>
   <p>
     We evaluated each model using the log-loss for the 2018-2019 March Madness tournament as well as how many points the bracket would
     generate in the NCAA competition. Logistic Regression, along with Neural Networks, performed the best out of the first four
@@ -422,18 +418,34 @@
     predict the final game.
   </p>
 
-  <h4>Future Steps</h4>
+  <h3 class="main">Future Steps</h3>
   <p>
-    Since our model has data from 1985 onwards, popular strategies may have changed and skewed the data. Our model could
-    value data from more recent seasons more than older seasons. Also, this could be put in practice for individual
-    seasons. However, upsets are still fairly hard to predict. Some teams could perform choke or have important players
+    Our model's were trained using data that went as far back as 1985. However, the way basketball is played has changed
+    drastically over time. For example, it wasn't until 1986 that the 3 point line was adopted by the NCAA. However, in the
+    modern game, the 3 pointer is one of the most important (and best) shots a player can take. So while old data is definitely
+    valuable, we could probably improve upon our models by having them value data from more recent seasons more than data from
+    older seasons.
+  </p>
+  <p>
+    Another way we could improve our models would be to try to take experience into account. March Madness is associated
+    with a lot of excitement, close games, and stress as players are forced to deal with environments they have never been in.
+    Teams that have players and coaches who have a lot of experience with March Madness are less likely to be rattled by
+    immense pressure that teams face in March Madness. We believe that by incorporating this factor we can improve the
+    accuracy of our models.
+  </p>
+  <p>
+    Another way we could improve upon our model is by trying to increase it's ability to predict upsets. We could try to do this
+    by further tinkering with our seeding factor. However, upsets are still fairly hard to predict. Some teams could choke or have important players
     get injured which would end their tournament run. Using extra features such as player experience or tendency to under
-    perform may help in predicting those upsets. An additional ML technique we could use is Node Regression.
-    Node Regression slightly modifies Logistic Regression and uses it in the training of Neural Networks.
+    perform may help in predicting those upsets.
+  </p>
+  <p>
+      An additional ML technique we could use is Node Regression. Node Regression slightly modifies Logistic Regression and uses it in the training of Neural Networks.
   </p>
     <!--Logistic Regression but better than Naïve Bayes. Our seeding implementation was effective
     but only had a positive impact when using it in combination with one model and the degree of its impact on the
     prediction of the bracket was dependent on the accuracy of the model it was used in combination with.</p>-->
+  <h3 class="main">References</h3>
   </section>
 </center>
 </body>
