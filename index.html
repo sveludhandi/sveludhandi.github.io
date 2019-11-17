@@ -72,8 +72,8 @@
       font-size:20px;
       }
     img {
-    height:300px;
-    width:400px;
+    height:400px;
+    width:500px;
     }
     ul {
       margin-right:300px;
@@ -336,7 +336,12 @@
   <img src = "images/finalRandomForTA.PNG" alt = "Random Forest Accuracy">
   <img src = "images/finalRandomFor.PNG" alt = "Random Forest Points">
   <p>
-    ____Insert Random Forest Analysis Here___
+    The random forest models all seemed to have a very similar training accuracy (varying less that 1%). However, the points scored by the
+    random forest model varied greatly depending on the feature set that was used. There was a general trend where, as we increased the number
+    of features, the points scored increased. We believe this because, as we increase the number of features, the decision trees the random forest model
+    uses become much more different. This means that while the random forest model for small feature sets is forced to rely on fairly
+    similar decision trees, the model is able to use many very different trees when analysing the larger feature sets. The decrease in similarity between
+    decision trees allows the model to get more accurate and likely led to the increase in points scored seen as the feature sets became larger.
   </p>
   <h3 class="model-header">Naive Bayes</h3>
   <p>Naive Bayes is a generative model working under the assumption that features are independent and classifies the data regardless of
@@ -345,7 +350,10 @@
   <img src = "images/finalNaiveBTA.PNG" alt = "Naive Bayes Accuracy">
   <img src = "images/finalNaiveBPoints.PNG" alt = "Naive Bayes Points">
   <p>
-    ____Insert Naive Bayes Analysis Here___
+    Even though Naive Bayes had different accuracies for all the feature sets, the points was almost all the same. Also,
+    the predictions were extremely confident in each matchup but got many of them wrong. Due to this, there didn't seem
+    to be a relationship between the accuracy and the points. This could be because of the extreme confidence in each
+    prediction. Games that might be closer to a 50% chance might end up being predicted completely wrong by this technique.
   </p>
   <h3 class="model-header">Neural Networks</h3>
   <p>Neural Networks uses multiple layers of different weighted nodes that are propogated through by the given features to produce an output.
