@@ -353,9 +353,20 @@
       </tr>
     </table>
   </div>
-  <h3 class="model-header">XGBoost</h3>
-  <p>XGBoost is an ensemble learning method similar to random forests in that it uses decision trees but uses gradient boosting. It
-    helps to minimize both bias and variance by using a multitude of decision trees.
+  <h3 class="model-header">Extreme Gradient Boosting (XGBoost)</h3>
+  <p>XGBoost is an ensemble learning method similar to random forests in that it uses decision trees but uses gradient boosting. Gradient
+      boosting sequentially adds trained predictors and assigns them weights and updates the model it is creating using gradient descent.
+      It helps to minimize both bias and variance by using a multitude of decision trees and has historically been considered one of the
+      best models to use when using machine learning to generate predictions. This is due to XGBoost's build-in cross validation and it's
+      use of both LASSO and Ridge regression to prevent overfitting.
+    </p>
+  <p>
+    While our XGBoosting models were all able to perform very well in the training, they tended to perform towards the middle of the
+    pack when generating a bracket for the 2019 March Madness competition. We believe this might be due to the fact that we train and test
+    our model based on a mix of data from 1985 to 2019 (not including the 2019 March Madness competition). However, the way basketball has
+    play was evolved over time. For example, the NCAA did not universally adopt the 3 point line until 1986 while 3 pointers are now considered
+    one of the best and most important shots in basketball. So while our model did a very good job of predicting the test data, it was unable to
+    account for the ways basketball has evolved when making it's predictions for the 2019 March Madness competition.
   </p>
   <br>
   <h3 class="model-header">Pick Most Confident (Our own ensemble Method)</h3>
